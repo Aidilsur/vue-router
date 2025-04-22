@@ -3,6 +3,7 @@ import App from "./App.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "./components/Home.vue";
 import About from "./components/About.vue";
+import ProductSearch from "./components/ProductSearch.vue";
 import ProductDetail from "./components/ProductDetail.vue";
 import NotFound from "./components/NotFound.vue";
 
@@ -16,6 +17,10 @@ const router = createRouter({
       path: "/about",
       component: About,
       sensitive: true,
+    },
+    {
+      path: "/products/search",
+      component: ProductSearch,
     },
     {
       path: "/products/:id(\\d+)?",

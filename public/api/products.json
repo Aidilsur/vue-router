@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "MacBook Pro M2",
+    "price": 25000000
+  },
+  {
+    "id": 2,
+    "name": "iPhone 14 Pro Max",
+    "price": 18000000
+  },
+  {
+    "id": 3,
+    "name": "Samsung Galaxy S23 Ultra",
+    "price": 15000000
+  },
+  {
+    "id": 4,
+    "name": "Sony WH-1000XM5",
+    "price": 4500000
+  },
+  {
+    "id": 5,
+    "name": "Logitech MX Master 3S",
+    "price": 1500000
+  },
+  {
+    "id": 6,
+    "name": "Dell UltraSharp U2723QE",
+    "price": 9000000
+  },
+  {
+    "id": 7,
+    "name": "NVIDIA RTX 4080",
+    "price": 16000000
+  },
+  {
+    "id": 8,
+    "name": "Samsung 980 Pro 2TB",
+    "price": 3500000
+  },
+  {
+    "id": 9,
+    "name": "Logitech StreamCam",
+    "price": 2000000
+  },
+  {
+    "id": 10,
+    "name": "Secretlab TITAN Evo 2022",
+    "price": 7500000
+  }
+]
