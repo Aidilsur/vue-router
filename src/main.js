@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "./components/Home.vue";
 import About from "./components/About.vue";
 import ProductDetail from "./components/ProductDetail.vue";
+import NotFound from "./components/NotFound.vue";
 
 const router = createRouter({
   routes: [
@@ -14,10 +15,15 @@ const router = createRouter({
     {
       path: "/about",
       component: About,
+      sensitive: true,
     },
     {
-      path: "/products/:id",
+      path: "/products/:id(\\d+)?",
       component: ProductDetail,
+    },
+    {
+      path: "/:notfound*",
+      component: NotFound,
     },
   ],
   history: createWebHistory(),
