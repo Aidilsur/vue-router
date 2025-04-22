@@ -8,7 +8,7 @@ const search = ref(route.query.product || "");
 const router = useRouter();
 
 watchEffect(() => {
-  router.replace({ query: { product: search.value } }); // replace or push
+  router.replace({ name: "product-search", query: { product: search.value } }); // replace or push
   fetch("/api/products.json")
     .then((response) => response.json())
     .then((products) =>
