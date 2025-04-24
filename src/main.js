@@ -97,9 +97,21 @@ const router = createRouter({
     {
       path: "/:notfound*",
       component: NotFound,
+      beforeEnter: (to, from, next) => {
+        console.log(`Not Found ${to.fullPath}`);
+        next();
+      },
     },
   ],
   history: createWebHistory(),
+});
+
+router.beforeEach((to, from, next) => {
+  console.log(`before navigation to ${to.fullPath} from ${from.fullPath}`);
+  next();
+});
+router.afterEach((to, from) => {
+  console.log(`after navigation to ${to.fullPath} from ${from.fullPath}`);
 });
 
 createApp(App).use(router).mount("#app");
