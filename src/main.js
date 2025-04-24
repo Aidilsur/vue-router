@@ -6,13 +6,6 @@ import About from "./components/About.vue";
 import ProductSearch from "./components/ProductSearch.vue";
 import ProductDetail from "./components/ProductDetail.vue";
 import NotFound from "./components/NotFound.vue";
-import User from "./components/User.vue";
-import UserProfile from "./components/UserProfile.vue";
-import UserOrder from "./components/UserOrder.vue";
-import UserWishlist from "./components/UserWishlist.vue";
-import UserHeader from "./components/UserHeader.vue";
-import UserOrderFooter from "./components/UserOrderFooter.vue";
-import userWishlistFooter from "./components/userWishlistFooter.vue";
 
 const router = createRouter({
   routes: [
@@ -63,34 +56,39 @@ const router = createRouter({
     },
     {
       path: "/users",
-      component: User,
+      component: () => import("./components/User.vue"),
       children: [
         {
           path: "",
           name: "user",
-          components: { default: UserProfile, header: UserHeader },
+          components: {
+            default: () => import("./components/UserProfile.vue"),
+            header: () => import("./components/UserHeader.vue"),
+          },
         },
         {
           path: "profile",
           name: "user-profile",
-          components: { default: UserProfile, header: UserHeader },
+          components: {
+            default: () => import("./components/UserProfile.vue"),
+            header: () => import("./components/UserHeader.vue"),
+          },
         },
         {
           path: "order",
-          component: UserOrder,
           components: {
-            default: UserOrder,
-            header: UserHeader,
-            footer: UserOrderFooter,
+            default: () => import("./components/UserOrder.vue"),
+            header: () => import("./components/UserHeader.vue"),
+            footer: () => import("./components/UserOrderFooter.vue"),
           },
           name: "user-order",
         },
         {
           path: "wishlist",
           components: {
-            default: UserWishlist,
-            header: UserHeader,
-            footer: userWishlistFooter,
+            default: () => import("./components/UserWishlist.vue"),
+            header: () => import("./components/UserHeader.vue"),
+            footer: () => import("./components/userWishlistFooter.vue"),
           },
           name: "user-wishlist",
         },
